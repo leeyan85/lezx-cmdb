@@ -28,7 +28,7 @@ APP_TOKEN = 'b8cae173-0d8d-4758-98a0-9ae1ceb3f698'
 BK_PAAS_HOST = 'http://paas.devops.letv.com'
 
 # 是否启用celery任务
-IS_USE_CELERY = True
+IS_USE_CELERY = False
 # 本地开发的 celery 的消息队列（RabbitMQ）信息
 BROKER_URL_DEV = 'amqp://guest:guest@127.0.0.1:5672/'
 # TOCHANGE 调用celery任务的文件路径, List of modules to import when celery starts.
@@ -93,7 +93,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'account.middlewares.LoginMiddleware',   # 登录鉴权中间件
+#    'account.middlewares.LoginMiddleware',   # 登录鉴权中间件
     'common.middlewares.CheckXssMiddleware',  # Xss攻击处理中间件
 )
 
