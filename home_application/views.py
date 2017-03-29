@@ -18,6 +18,7 @@ def home(request):
          'all_record': all_record
     }
     '''
+    print "hello,world!"
     return HttpResponse('hello,world!')
     #return render_mako_context(request, '/home_application/home.html', ctx)
 
