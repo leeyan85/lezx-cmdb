@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from home_application.models import MultRecord
 from account.decorators import login_exempt
 
+
 def home(request):
     """
     首页
