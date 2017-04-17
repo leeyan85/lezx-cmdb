@@ -3,8 +3,6 @@
 from common.mymako import render_mako_context, render_json
 from django.http import HttpResponse
 # from django.http import JsonResponse
-
-from home_application.models import MultRecord
 from account.decorators import login_exempt
 
 
