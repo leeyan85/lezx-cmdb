@@ -19,7 +19,8 @@ def home(request):
     }
     '''
     print "hello,world!"
-    return HttpResponse('hello,world!')
+    a= request.COOKIES['bk_token']
+    return HttpResponse('a')
     #return render_mako_context(request, '/home_application/home.html', ctx)
 
 
