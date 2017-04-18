@@ -3,10 +3,11 @@
 from common.mymako import render_mako_context, render_json
 from django.http import HttpResponse
 import ump
+import json
 # from django.http import JsonResponse
 from account.decorators import login_exempt
 
-
+@login_exempt
 def home(request):
     """
     首页
@@ -20,8 +21,10 @@ def home(request):
     print "hello,world!"
     server_info=ump.http_get()
     a= request.COOKIES['bk_token']
+
     print server_info
-    return HttpResponse(server_info)
+    print a
+    return HttpResponse(json.dumps(server_info))
     #return render_mako_context(request, '/home_application/home.html', ctx)
 
 
@@ -45,3 +48,6 @@ def contactus(request):
     联系我们
     """
     return render_mako_context(request, '/home_application/contact.html')
+
+
+home()
