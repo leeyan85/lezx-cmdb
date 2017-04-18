@@ -6,5 +6,4 @@ urlpatterns = patterns('home_application.views',
     (r'^$', 'home'),
     (r'^dev-guide/$', 'dev_guide'),
     (r'^contactus/$', 'contactus'),
-    (r'^multiplication_computer/$', 'multiplication_computer'),
 )
