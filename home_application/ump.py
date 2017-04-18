@@ -16,7 +16,6 @@ CNHK = re.compile(ur"香港")  # 中国香港
 def http_get():
     url = "http://ump.letv.cn/api/cmdb/servicetree/androidDevice?token=fc87fcc85afcbb9bc0585ef1154143ea"
     response = urllib2.urlopen(url)
-    result_js=json.loads(b)
     result_js = json.loads(response.read())
     return result_js
 
