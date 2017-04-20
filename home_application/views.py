@@ -45,8 +45,7 @@ def contactus(request):
 
 @login_exempt
 def get_app_list(request):
-    client = get_client_by_request(request)
-    # 获取作业id
+    client = get_client_by_request(request) #初始化client
     kwargs = {
         "app_code": settings.APP_ID,
         "app_secret": settings.APP_TOKEN,
