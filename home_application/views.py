@@ -11,21 +11,9 @@ from django.conf import settings
 
 @login_exempt
 def home(request):
-    """
-    首页
-    """
-    '''
-    all_record = MultRecord.objects.all()
-    ctx = {
-         'all_record': all_record
-    }
-    '''
-    print "hello,world!"
     server_info=ump.http_get()
     a= request.COOKIES['bk_token']
-    #print server_info
-    return HttpResponse("your cookies key 'bk_token' is %s" %a)
-    #return HttpResponse('hello,world!')
+    return HttpResponse(json.dumps(server_info,ensure_ascii=False))
     #return render_mako_context(request, '/home_application/home.html', ctx)
 
 
@@ -53,5 +41,4 @@ def get_app_list(request):
         #"app_id": "4",
     }
     result = client.cc.get_app_list(kwargs)
-    print type(result)
-    return HttpResponse("your cookies key 'bk_token' is %s" % json.dumps(result))
+    return HttpResponse("your cookies key 'bk_token' is %s" % json.dumps(result,ensure_ascii=False))
