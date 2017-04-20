@@ -24,7 +24,7 @@ def home(request):
     server_info=ump.http_get()
     a= request.COOKIES['bk_token']
     #print server_info
-    return JsonResponse("your cookies key 'bk_token' is %s" %a)
+    return HttpResponse("your cookies key 'bk_token' is %s" %a)
     #return HttpResponse('hello,world!')
     #return render_mako_context(request, '/home_application/home.html', ctx)
 
