@@ -46,4 +46,4 @@ def get_city_list(IDC, ump_server_data):
             server_list.append(tmp)
     return len(server_list), server_list
 
-http_get()
+#http_get()
