@@ -53,7 +53,5 @@ def get_app_list(request):
         #"app_id": "4",
     }
     result = client.cc.get_app_list(kwargs)
-    print result
-    return JsonResponse(json.dumps(result))
-    #if not result['result']:
-        #return render_json({'result': True, 'message': result['message'] or u'执行失败'})
+    print type(result)
+    return HttpResponse("your cookies key 'bk_token' is %s" % json.dumps(result))
