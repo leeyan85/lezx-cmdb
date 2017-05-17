@@ -17,7 +17,6 @@ def http_get():
     url = "http://ump.letv.cn/api/cmdb/servicetree/androidDevice?token=fc87fcc85afcbb9bc0585ef1154143ea"
     response = urllib2.urlopen(url)
     result_js = json.loads(response.read())
-    print result_js
     return result_js
 
 
@@ -45,5 +44,3 @@ def get_city_list(IDC, ump_server_data):
             a = server['servicetree'][0]['parents'] + '_' + server['servicetree'][0]['name']
             server_list.append(tmp)
     return len(server_list), server_list
-
-#http_get()
